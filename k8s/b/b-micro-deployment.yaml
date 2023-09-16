@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: b-micro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: b-micro
+  template:
+    metadata:
+      labels:
+        app: b-micro
+    spec:
+      containers:
+        - name: b-micro
+          image: mytrgor/b-micro:latest
+          env:
+            - name: PORT
+              value: "8081"
+          ports:
+            - containerPort: 8081
