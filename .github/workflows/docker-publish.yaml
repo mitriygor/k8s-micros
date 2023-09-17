@@ -31,4 +31,5 @@ jobs:
         with:
           context: ./b-micro
           push: true
+          tags: mytrgor/b-micro
           platforms: linux/arm64/v8
