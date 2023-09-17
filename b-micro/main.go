@@ -9,7 +9,7 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
-			_, _ = fmt.Fprintln(w, "B-Micro: Hello B - 009")
+			_, _ = fmt.Fprintln(w, "B-Micro: Hello B - 010")
 		} else {
 			_, _ = fmt.Fprintln(w, "B-Micro: Error")
 		}
