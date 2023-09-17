@@ -17,7 +17,12 @@ kind: Deployment
 metadata:
   name: b-micro-deployment
 spec:
-  replicas: 1
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
   selector:
     matchLabels:
       app: b-micro
@@ -28,6 +33,7 @@ spec:
     spec:
       containers:
         - name: b-micro-container
-          image: mytrgor/b-micro:v1.0.5
+          image: mytrgor/b-micro
+          imagePullPolicy: Always
           ports:
             - containerPort: 8081
